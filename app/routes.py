@@ -1,17 +1,18 @@
+from flask import render_template
 from app import app
 
-#Create a rooute usin the @app.route to trigger function base don endpoint
+# Create routes for our app
 @app.route('/')
 def index():
-    return 'Hello this is the index route!'
+    user_info = {
+        'username': 'dyannac',
+        'email': 'dyanna@codingtemple.com'
+    }
+    drinks = ['coffee', 'water', 'smoothies', 'tea', 'broth']
+    return render_template('index.html', user=user_info,
+     drink=drinks)
 
 
-#add another route
 @app.route('/posts')
 def posts():
-    return 'Posts will eventually be on this page.'
-
-#add another route
-#@app.route('/posts')
-#def favorite_five():
- #   return 'Posts will eventually be on this page.'
+    return 'Hi this is Posts!'
