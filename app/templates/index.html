@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dyanna's Blog</title>
+    <title>Kekambas Blog</title>
 </head>
 <body>
     <h1>Hello {{ user.get('username') }}!</h1>
-    <h4>You are at the home page.</h4>
+    <h4>This is the home page.</h4>
     <h6>Email: {{ user['email'] }}</h6>
-    <h3>My favorite drinks:</h3>
+    <p>{{ 4 + 7 }}</p>
+    <h3>My favorite drink:</h3>
     <ul>
         {% for drink in drinks %}
-        <li> {{ drink }}</li>   
+            {% if drink == 'water' %}
+                <li>{{ drink.upper() }}</li>
+            {% else %}
+                <li>{{ drink.lower() }}</li>
+            {% endif %}
         {% endfor %}
     </ul>
 </body>

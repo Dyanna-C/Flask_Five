@@ -9,8 +9,7 @@ def index():
         'email': 'dyanna@codingtemple.com'
     }
     drinks = ['coffee', 'water', 'smoothies', 'tea', 'broth']
-    return render_template('index.html', user=user_info,
-     drink=drinks)
+    return render_template('index.html', user=user_info, drinks=drinks)
 
 
 @app.route('/posts')
